@@ -1,5 +1,8 @@
 # ttid
 
+[![Crates.io](https://img.shields.io/crates/v/ttid.svg)](https://crates.io/crates/ttid)
+[![Docs.rs](https://docs.rs/ttid/badge.svg)](https://docs.rs/ttid)
+
 Typed, time-aware IDs built on UUIDv8.
 
 `ttid` is for systems where you want UUID interoperability, but better ergonomics in logs and APIs.
