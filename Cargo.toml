@@ -1,0 +1,8 @@
+[package]
+name = "ttid"
+version = "0.1.0-alpha.1"
+edition = "2024"
+
+[dependencies]
+short-uuid = "0.2.1"
+uuid = { version = "1.20.0", features = ["v4"] }
