@@ -1,6 +1,6 @@
 [package]
 name = "ttid"
-version = "0.1.0-alpha.1"
+version = "0.1.0-alpha.2"
 edition = "2024"
 authors = ["Christoph Herzog <chris@theduke.at>"]
 description = "Typed, time-aware IDs built on UUIDv8."
