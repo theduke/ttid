@@ -44,6 +44,32 @@ jobs:
           RUSTDOCFLAGS: -D warnings
         run: cargo doc --all-features --no-deps
 
+  go:
+    name: Go checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go/go.mod
+
+      - name: Check formatting
+        working-directory: go
+        run: |
+          test -z "$(find . -name '*.go' -type f | sort | xargs gofmt -l | tee /dev/stderr)"
+
+      - name: Type check
+        working-directory: go
+        run: go test ./... -run '^$'
+
+      - name: Run tests
+        working-directory: go
+        run: go test ./...
+
   audit:
     name: Dependency audit
     runs-on: ubuntu-latest
